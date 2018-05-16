@@ -1,0 +1,202 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #fefce3;
+  font-size: 1.5em;
+}
+
+* {
+  box-sizing: border-box;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-gap: 10px 5px;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas: "header header" "section sidebar" "footer footer";
+  width: 90%;
+  margin: 10px auto;
+}
+
+section {
+  grid-area: section;
+  padding: 25px;
+}
+
+aside {
+  grid-area: sidebar;
+}
+
+footer {
+  grid-area: footer;
+}
+
+.grid-container>* {
+  border: 3px solid #f08c00;
+  border-radius: 8px;
+}
+
+header {
+  grid-area: header;
+  display: flex;
+  flex-direction: row;
+  background-color: #ffec99;
+  padding: 25px;
+  text-align: center;
+  justify-content: space-between;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+li a {
+  text-decoration: none;
+  padding: 10px;
+  color: #8c1a8b;
+}
+
+h2 {
+  font-size: 25px;
+  margin-bottom: 25px;
+}
+
+.card {
+  display: grid;
+  grid-gap: 25px;
+  grid-template-columns: 2fr 1fr;
+}
+
+legend {
+  border-bottom: 4px solid #404040;
+  color: #404040;
+  font-weight: bold;
+  padding-bottom: 5px;
+  width: 100%;
+}
+
+.fieldset1 {
+  display: grid;
+  grid-gap: 0;
+  grid-template-columns: 50% 50%;
+  grid-template-areas: "field1 field2" "field3 field4" "field5 field5";
+}
+
+.field1 {
+  grid-area: field1;
+  border-right: 1px solid #333;
+}
+
+.field2 {
+  grid-area: field2;
+}
+
+.field3 {
+  grid-area: field3;
+  border-right: 1px solid #333;
+}
+
+.field4 {
+  grid-area: field4;
+}
+
+.field5 {
+  grid-area: field5;
+}
+
+.field {
+  border-bottom: 1px solid #333;
+  padding: 0 5px 10px 10px;
+}
+
+.field:hover {
+  background: #fff2ba;
+  cursor: text;
+}
+
+label {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 10px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+input, textarea {
+  font-size: 20px;
+  width: 100%;
+  background: transparent;
+}
+
+@media (max-width: 700px) {
+  a {
+    font-size: 16px;
+  }
+  .card {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .fieldset1 {
+    display: flex;
+    flex-direction: column;
+  }
+  .field {
+    border-right: none;
+    height: 60px;
+  }
+  .field5 {
+    height: 70px;
+  }
+  textarea {
+    height: 50px;
+  }
+}
+
+@media (max-width: 900px) {
+  body {
+    margin: 15px;
+  }
+  .grid-container {
+    margin: 0;
+    width: 100%;
+    grid-template-areas: "header" "section" "sidebar" "footer";
+    grid-template-columns: 1fr;
+  }
+  header {
+    flex-direction: column;
+    padding: 25px;
+    text-align: center;
+    justify-content: space-between;
+  }
+  #logo {
+    margin-bottom: 15px;
+  }
+}
+
+.button {
+  display: inline-block;
+  font-size: 18px;
+  padding: 5px 20px;
+  color: #fff;
+  border: 1px solid black;
+  border-color: #478228 #478228 #3c6f22;
+  border-radius: 2px;
+  cursor: pointer;
+  background: #5ca934;
+  margin: 20px 0;
+}
+
+.button:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+aside, footer {
+  text-align: center;
+  padding: 15px;
+}
